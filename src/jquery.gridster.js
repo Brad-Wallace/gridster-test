@@ -35,7 +35,7 @@
             distance: 4
         },
         resize: {
-            enabled: false,
+            enabled: true,
             axes: ['both'],
             handle_append_to: '',
             handle_class: 'gs-resize-handle',
