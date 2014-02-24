@@ -36,7 +36,7 @@
         styles += '@media (max-width: 768px) {';
 
         for (var x = 1; x <= max_size_x; x++) {
-            styles += (opts.namespace + ' [data-sizex="' + x + '"] { width: 100' + '%; }\n');
+            styles += (opts.namespace + ' [data-sizex="' + x + '"] { width: ' + opts.widget_base_dimensions[0] ';}\n');
         }
 
         styles += '}';
@@ -119,7 +119,7 @@
 
         return this;
     };
-/*
+
     $.Gridster.has_resize_handle = function($w) {
         var append_to = this.options.resize.handle_append_to;
         return (((append_to ? $(append_to, $w) : $w).find('.gs-resize-handle').length) > 0);
@@ -243,5 +243,5 @@
             this.resize_widget($widget);
         }
     };
-    */
+
 })(jQuery);
