@@ -4,22 +4,23 @@
 		<script src="dist/jquery.gridster.with-extras.js" type="text/JavaScript"></script>
 		<link href="dist/jquery.gridster.css" type="text/css" rel="stylesheet" />
 		<link href="styles.css" type="text/css" rel="stylesheet" />
+	<script src="responsive-attempt.js" type="text/JavaScript"></script>
     <!--	<script src="gridster.responsive.plugin.js" type="text/JavaScript"></script> -->
 	</head>
 
 	<body>
 		<div style="float:left">
 			<div class="gridster" id="testing">
-			    <ul>
-			        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
-			        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
-			        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
+			    <ul id="gridsterUL">
+			        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" ></li>
+			        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" ></li>
+			        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1" ></li>
 			 
-			        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
-			        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"></li>
+			        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1" id="item1"></li>
+			        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2" id="item2"></li>
 			 
-			        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
-			        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"></li>
+			        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1" id="item3"></li>
+			        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1" id="item4"></li>
 			        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
 			 
 			        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
@@ -32,37 +33,11 @@
 		</div>
 	<script type="text/javascript" >
         $(function() {
-
-        	$( window ).resize(function() {
-
-        		var wWidth = $(window).width();
-
-        		if(wWidth < 750){
-
-	        		var gridster = $("#testing ul").gridster({
-                		namespace: '#testing',
-                		widget_base_dimensions: [50, 25],
-                		widget_margins: [5, 5],
-                		max_cols: 2
-            		}).data('gridster');
-
-            		gridster.init();
-
-	        	}
-	        	if(wWidth > 750){
-
-	        		var gridster = $("#testing ul").gridster({
-                		namespace: '#testing',
-                		widget_base_dimensions: [100, 55],
-                		widget_margins: [5, 5]
-            		}).data('gridster');
-
-            		gridster.init();
-
-	        	}
-
-			});
-
+        		var gridster = $("#testing ul").gridster({
+               		namespace: '#testing',
+               		widget_base_dimensions: [100, 55],
+               		widget_margins: [5, 5]
+           		}).data('gridster');
         });
     </script>    
 	</body>
